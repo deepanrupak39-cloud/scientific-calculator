@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#10131e">
+  <title>Scientific Calculator</title>
+  <link rel="stylesheet" href="styles.css">
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <main class="calculator" aria-label="Scientific calculator">
+    <header class="topbar">
+      <div class="brand"><span class="brand-icon" aria-hidden="true">∑</span><div><h1>Scientific</h1><p>CALCULATOR</p></div></div>
+      <button class="mode-toggle" id="angle-mode" type="button" aria-label="Angle mode: degrees" title="Switch angle mode">DEG</button>
+    </header>
+
+    <section class="screen" aria-label="Calculator display">
+      <div class="expression" id="expression" aria-live="polite"></div>
+      <output class="result" id="result" aria-live="polite">0</output>
+    </section>
+
+    <section class="keypad" aria-label="Calculator keys">
+      <button class="key function" data-insert="sin(" aria-label="sine">sin</button>
+      <button class="key function" data-insert="cos(" aria-label="cosine">cos</button>
+      <button class="key function" data-insert="tan(" aria-label="tangent">tan</button>
+      <button class="key function" data-insert="asin(" aria-label="inverse sine">sin⁻¹</button>
+      <button class="key function" data-insert="acos(" aria-label="inverse cosine">cos⁻¹</button>
+      <button class="key function" data-insert="atan(" aria-label="inverse tangent">tan⁻¹</button>
+
+      <button class="key function" data-insert="log(" aria-label="base 10 logarithm">log</button>
+      <button class="key function" data-insert="ln(" aria-label="natural logarithm">ln</button>
+      <button class="key function" data-insert="sqrt(" aria-label="square root">√</button>
+      <button class="key function" data-insert="^2" aria-label="square">x²</button>
+      <button class="key function" data-insert="^" aria-label="power">xʸ</button>
+      <button class="key function" data-insert="!" aria-label="factorial">x!</button>
+
+      <button class="key function" data-insert="π" aria-label="pi">π</button>
+      <button class="key function" data-insert="e" aria-label="Euler's number">e</button>
+      <button class="key function" data-insert="(" aria-label="open parenthesis">(</button>
+      <button class="key function" data-insert=")" aria-label="close parenthesis">)</button>
+      <button class="key function" data-insert="%" aria-label="percent">%</button>
+      <button class="key utility" data-action="backspace" aria-label="delete last character">⌫</button>
+
+      <button class="key utility" data-action="clear">AC</button>
+      <button class="key utility" data-action="sign">±</button>
+      <button class="key operator" data-insert="/" aria-label="divide">÷</button>
+      <button class="key operator" data-insert="*" aria-label="multiply">×</button>
+      <button class="key number" data-insert="7">7</button>
+      <button class="key number" data-insert="8">8</button>
+
+      <button class="key number" data-insert="9">9</button>
+      <button class="key operator" data-insert="-" aria-label="subtract">−</button>
+      <button class="key number" data-insert="4">4</button>
+      <button class="key number" data-insert="5">5</button>
+      <button class="key number" data-insert="6">6</button>
+      <button class="key operator" data-insert="+" aria-label="add">+</button>
+
+      <button class="key number" data-insert="1">1</button>
+      <button class="key number" data-insert="2">2</button>
+      <button class="key number" data-insert="3">3</button>
+      <button class="key number" data-insert="0">0</button>
+      <button class="key number" data-insert=".">.</button>
+      <button class="key equals" data-action="equals" aria-label="calculate">=</button>
+    </section>
+    <p class="hint">Enter to calculate <span>·</span> Esc to clear</p>
+  </main>
+</body>
+</html>
