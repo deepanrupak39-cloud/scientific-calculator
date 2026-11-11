@@ -32,19 +32,28 @@ body {
   background: linear-gradient(145deg, #1d2232, var(--panel));
   box-shadow: 0 28px 80px #0008, inset 0 1px #ffffff12;
 }
-.topbar { display: flex; align-items: center; justify-content: space-between; margin-bottom: 22px; }
-.brand { display: flex; align-items: center; gap: 12px; }
-.brand-icon { display: grid; width: 42px; height: 42px; place-items: center; border-radius: 13px; background: #8c7bff1d; color: var(--accent-bright); font-size: 27px; }
+.topbar { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-bottom: 22px; }
+.brand { display: flex; align-items: center; gap: 12px; min-width: 0; }
+.brand-icon { display: grid; flex: 0 0 42px; width: 42px; height: 42px; place-items: center; border-radius: 13px; background: #8c7bff1d; color: var(--accent-bright); font-size: 27px; }
 h1 { margin: 0; font-size: 17px; font-weight: 800; letter-spacing: -.4px; }
-.brand p { margin: 2px 0 0; color: var(--muted); font-size: 9px; font-weight: 700; letter-spacing: 1.8px; }
+.brand p { margin: 2px 0 0; color: var(--muted); font-size: 9px; font-weight: 700; letter-spacing: 1.4px; }
 .mode-toggle { border: 1px solid #8c7bff55; border-radius: 9px; padding: 8px 12px; background: #8c7bff17; color: var(--accent-bright); font: 700 11px 'DM Mono', monospace; cursor: pointer; }
 .mode-toggle:hover { background: #8c7bff30; }
-.screen { min-height: 118px; margin-bottom: 18px; padding: 18px 20px; display: flex; flex-direction: column; justify-content: end; align-items: flex-end; overflow: hidden; border: 1px solid #ffffff08; border-radius: 16px; background: var(--screen); }
+.screen { min-height: 118px; margin-bottom: 16px; padding: 18px 20px; display: flex; flex-direction: column; justify-content: end; align-items: flex-end; overflow: hidden; border: 1px solid #ffffff0b; border-radius: 16px; background: var(--screen); }
 .expression { width: 100%; min-height: 22px; overflow: hidden; color: var(--muted); text-align: right; text-overflow: ellipsis; white-space: nowrap; font: 14px 'DM Mono', monospace; }
 .result { max-width: 100%; overflow: hidden; color: var(--text); text-overflow: ellipsis; white-space: nowrap; font: 500 clamp(31px, 8vw, 42px) 'DM Mono', monospace; letter-spacing: -1.5px; }
 .result.error { color: #ff8291; font-size: 25px; letter-spacing: 0; }
+.voice-controls { min-height: 51px; margin: 0 0 16px; display: flex; align-items: center; gap: 12px; }
+.voice-button { display: inline-flex; flex: 0 0 auto; align-items: center; justify-content: center; gap: 8px; min-height: 42px; padding: 0 15px; border: 1px solid #8c7bff66; border-radius: 12px; background: #8c7bff20; color: var(--accent-bright); font: 700 12px 'Manrope', sans-serif; cursor: pointer; transition: background .18s, transform .18s; }
+.voice-button:hover:not(:disabled) { background: #8c7bff35; }
+.voice-button:active:not(:disabled) { transform: scale(.97); }
+.voice-button.listening { border-color: #ff8291; background: #ff82911c; color: #ffabb5; animation: pulse 1.2s infinite; }
+.voice-button:disabled { opacity: .6; cursor: not-allowed; }
+.mic-icon { font-size: 16px; }
+.voice-status { margin: 0; color: var(--muted); font-size: 11px; line-height: 1.5; }
+@keyframes pulse { 50% { box-shadow: 0 0 0 5px #ff829122; } }
 .keypad { display: grid; grid-template-columns: repeat(6, minmax(0, 1fr)); gap: 9px; }
-.key { min-width: 0; height: 50px; border: 1px solid #ffffff08; border-radius: 12px; background: var(--key); color: var(--text); font: 600 15px 'Manrope', sans-serif; cursor: pointer; transition: background .15s, transform .1s, border-color .15s; }
+.key { min-width: 0; height: 50px; border: 1px solid #ffffff08; border-radius: 12px; background: var(--key); color: var(--text); font: 600 15px 'Manrope', sans-serif; cursor: pointer; transition: transform .12s, background .18s, border-color .18s; }
 .key:hover { border-color: #ffffff19; background: var(--key-hover); }
 .key:active { transform: scale(.96); }
 .key.function { color: #b8b2ff; background: #29273e; font-size: 13px; }
@@ -55,9 +64,12 @@ h1 { margin: 0; font-size: 17px; font-weight: 800; letter-spacing: -.4px; }
 .key.equals:hover { background: #7968f0; }
 .hint { margin: 17px 0 0; color: #737b91; text-align: center; font-size: 10px; letter-spacing: .2px; }
 .hint span { padding: 0 5px; color: var(--accent); }
+button:focus-visible { outline: 2px solid var(--accent-bright); outline-offset: 3px; }
 @media (max-width: 420px) {
   .calculator { padding: 18px; border-radius: 21px; }
   .keypad { gap: 7px; }
   .key { height: 46px; border-radius: 10px; font-size: 14px; }
   .key.function { font-size: 11px; }
+  .brand p { letter-spacing: .8px; }
+  .voice-controls { align-items: flex-start; }
 }

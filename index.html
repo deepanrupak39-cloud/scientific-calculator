@@ -4,14 +4,15 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#10131e">
-  <title>Scientific Calculator</title>
+  <meta name="description" content="Victor's Calculator — a scientific calculator with hands-free voice control.">
+  <title>Victor's Calculator</title>
   <link rel="stylesheet" href="styles.css">
   <script src="script.js" defer></script>
 </head>
 <body>
-  <main class="calculator" aria-label="Scientific calculator">
+  <main class="calculator" aria-label="Victor's scientific calculator">
     <header class="topbar">
-      <div class="brand"><span class="brand-icon" aria-hidden="true">∑</span><div><h1>Scientific</h1><p>CALCULATOR</p></div></div>
+      <div class="brand"><span class="brand-icon" aria-hidden="true">∑</span><div><h1>Victor's Calculator</h1><p>SCIENTIFIC · VOICE CONTROL</p></div></div>
       <button class="mode-toggle" id="angle-mode" type="button" aria-label="Angle mode: degrees" title="Switch angle mode">DEG</button>
     </header>
 
@@ -19,6 +20,13 @@
       <div class="expression" id="expression" aria-live="polite"></div>
       <output class="result" id="result" aria-live="polite">0</output>
     </section>
+
+    <div class="voice-controls">
+      <button class="voice-button" id="voice-button" type="button" aria-pressed="false" aria-label="Start voice input">
+        <span class="mic-icon" aria-hidden="true">🎙</span><span id="voice-label">Use voice</span>
+      </button>
+      <p class="voice-status" id="voice-status" aria-live="polite">Say a calculation, e.g. “five plus three”</p>
+    </div>
 
     <section class="keypad" aria-label="Calculator keys">
       <button class="key function" data-insert="sin(" aria-label="sine">sin</button>
@@ -63,7 +71,7 @@
       <button class="key number" data-insert=".">.</button>
       <button class="key equals" data-action="equals" aria-label="calculate">=</button>
     </section>
-    <p class="hint">Enter to calculate <span>·</span> Esc to clear</p>
+    <p class="hint">Enter to calculate <span>·</span> Esc to clear <span>·</span> Say “calculate” when using voice</p>
   </main>
 </body>
 </html>
